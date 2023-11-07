@@ -29,7 +29,7 @@ public final class Jedi extends ForceUser implements IForceAttack {
 
     @Override
     public int forceAttack() {
-        System.out.println(this.name + " used the force and pushes the enemy!");
+        System.out.println(this.name + " used the force and pushes the enemy! Enemy took " + this.forcePoints + " of damage");
         return this.forcePoints;
     }
 }
