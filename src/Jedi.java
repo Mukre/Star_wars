@@ -14,22 +14,24 @@ public final class Jedi extends ForceUser implements IForceAttack {
         switch (slot) {
             case 1:
                 damage = attackSaber() + this.forcePoints;
+                System.out.println("Enemy took " + damage + " of damage");
                 break;
             case 2:
                 damage = forceAttack();
+                System.out.println("Enemy took " + (this.forcePoints) + " of damage");
                 break;
             default:
-                damage = attackSaber();
+                damage = attackSaber() + this.forcePoints;
+                System.out.println("Enemy took " + damage + " of damage");
                 break;
         }
-        System.out.println("Enemy took " + damage + " of damage");
         return damage;
     }
 
 
     @Override
     public int forceAttack() {
-        System.out.println(this.name + " used the force and pushes the enemy! Enemy took " + this.forcePoints + " of damage");
+        System.out.println(this.name + " used the force and pushes the enemy!");
         return this.forcePoints;
     }
 }

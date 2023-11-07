@@ -5,9 +5,7 @@ public class Main {
         Sith sith = new Sith();
         Entities winner;
         winner = fight(sith, jedi);
-
     }
-
     public static Entities fight(Entities p1, Entities p2) {
         int randomFirst = ((int) (Math.random() * (2 - 1 + 1) + 1));
         Entities firstPlayer = p1;
