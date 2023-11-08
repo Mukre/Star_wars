@@ -19,9 +19,9 @@ public class Main{
         }
         while (true) {
             secondPlayer.lifeCurrent -= firstPlayer.attack(Operations.generateRandomInt(1,5));
-            if (p2.lifeCurrent <= 0) {
-                p2.knockedOut = true;
-                System.out.println(p2.name + " is knocked out");
+            if (secondPlayer.lifeCurrent <= 0) {
+                secondPlayer.knockedOut = true;
+                System.out.println(secondPlayer.name + " is knocked out");
                 return firstPlayer;
             }
             firstPlayer.lifeCurrent -= secondPlayer.attack(Operations.generateRandomInt(1,5));
