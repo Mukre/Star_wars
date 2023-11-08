@@ -3,9 +3,10 @@ import java.util.Random;
 
 public class Main{
     public static void main(String[] args) {
-        Jedi jedi = new Jedi("Sifo Dyas", 1, 20, 25, 140);
+        Jedi jedi = new Jedi("Sifo-Dyas", 1, 20, 25, 140);
         Sith sith = new Sith("Count Dooku", 1, 20, 25, 140);
-        Entities winner = fight(jedi, sith);
+        Mandalorian mandalorian = new Mandalorian();
+        Entities winner = fight(jedi, mandalorian);
         winner.recover();
 
 

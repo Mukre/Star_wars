@@ -33,4 +33,9 @@ public class Sith extends ForceUser implements IForceAttack {
         System.out.println(this.name + " used force lighting!");
         return (this.forcePoints * this.level);
     }
+    @Override
+    public int attackSaber() {
+        System.out.println(this.name + " does WHON!");
+        return (this.level * this.saberAbility);
+    }
 }

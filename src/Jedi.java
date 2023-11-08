@@ -22,16 +22,20 @@ public final class Jedi extends ForceUser implements IForceAttack {
         if (slot == 2) {
             damage = forceAttack();
         } else {
-            damage = attackSaber() + this.forcePoints;
+            damage = attackSaber();
         }
         System.out.println("Enemy took " + damage + " of damage");
         return damage;
     }
-
-
     @Override
     public int forceAttack() {
         System.out.println(this.name + " used the force and pushes the enemy!");
         return this.forcePoints;
+    }
+
+    @Override
+    public int attackSaber() {
+        System.out.println(this.name + " does WHON!");
+        return (this.level * this.saberAbility) + this.forcePoints;
     }
 }
