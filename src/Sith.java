@@ -11,16 +11,10 @@ public class Sith extends ForceUser implements IForceAttack {
     @Override
     public int attack(int slot) {
         int damage = 0;
-        switch (slot) {
-            case 1:
-                damage = this.attackSaber();
-                break;
-            case 2:
-                damage = this.forceAttack();
-                break;
-            default:
-                damage = this.attackSaber();
-                break;
+        if (slot == 2) {
+            damage = this.forceAttack();
+        } else {
+            damage = this.attackSaber();
         }
         System.out.println("Enemy took " + damage + " of damage");
         return damage;

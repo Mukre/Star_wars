@@ -1,33 +1,30 @@
-public class Main {
+import java.util.Observable;
+import java.util.Random;
+
+public class Main{
     public static void main(String[] args) {
-        Mandalorian mandalorian = new Mandalorian();
         Jedi jedi = new Jedi();
         Sith sith = new Sith();
-        Entities winner;
-        winner = fight(sith, jedi);
+        fight(jedi, sith);
     }
+
     public static Entities fight(Entities p1, Entities p2) {
-        int randomFirst = ((int) (Math.random() * (2 - 1 + 1) + 1));
+        Random ran = new Random();
+        int randomInteger = ran.nextInt();
         Entities firstPlayer = p1;
         Entities secondPlayer = p2;
-        switch (randomFirst) {
-            case 1:
-                firstPlayer = p1;
-                secondPlayer = p2;
-                break;
-            case 2:
-                firstPlayer = p2;
-                secondPlayer = p1;
-                break;
+        if (randomInteger % 2 == 0) {
+            firstPlayer = p2;
+            secondPlayer = p1;
         }
         while (true) {
-            secondPlayer.lifeCurrent -= firstPlayer.attack(((int) (Math.random() * (5 - 1 + 1) + 1)));
+            secondPlayer.lifeCurrent -= firstPlayer.attack(Operations.generateRandomInt(1,5));
             if (p2.lifeCurrent <= 0) {
                 p2.knockedOut = true;
                 System.out.println(p2.name + " is knocked out");
                 return firstPlayer;
             }
-            firstPlayer.lifeCurrent -= secondPlayer.attack(((int) (Math.random() * (5 - 1 + 1) + 1)));
+            firstPlayer.lifeCurrent -= secondPlayer.attack(Operations.generateRandomInt(1,5));
             if (firstPlayer.lifeCurrent <= 0) {
                 firstPlayer.knockedOut = true;
                 System.out.println(p1.name + " is knocked out");

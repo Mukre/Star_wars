@@ -6,10 +6,7 @@ public class Mandalorian extends Entities {
     }
 
     public int attackBlaster() {
-        int min = 5;
-        int max = 10;
-
-        int randomDamage = (int) (Math.random() * (max - min + 1) + min);
+        int randomDamage = Operations.generateRandomInt(5, 10);
         System.out.println(this.name + " shoot with his blaster! Enemy took " + randomDamage + " of damage");
         return randomDamage;
     }
@@ -17,19 +14,13 @@ public class Mandalorian extends Entities {
     @Override
     public int attack(int slot) {
         int damage = 0;
-
-        switch (slot) {
-            case 1:
-                damage = this.attackBlaster();
-                break;
-            case 2:
-                System.out.println(this.name + " used thermal grenade!  Enemy took 20 of damage");
-                damage = 20;
-                break;
-            default:
-                damage = this.attackBlaster();
-                break;
+        if (slot == 2) {
+            System.out.println(this.name + " used thermal grenade!");
+            damage = 20;
+        } else {
+            damage = this.attackBlaster();
         }
+        System.out.println("Enemy took " + damage + " of damage");
         return damage;
     }
 }
