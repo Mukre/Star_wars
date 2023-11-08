@@ -6,7 +6,8 @@ public class Mandalorian extends Entities {
     }
 
     public int attackBlaster() {
-        int randomDamage = Operations.generateRandomInt(5, 10);
+        Operations op = new Operations();
+        int randomDamage = op.generateRandomInt(5, 10);
         System.out.println(this.name + " shoot with his blaster! Enemy took " + randomDamage + " of damage");
         return randomDamage;
     }
