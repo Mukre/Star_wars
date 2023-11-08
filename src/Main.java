@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Main{
     public static void main(String[] args) {
-        Jedi jedi = new Jedi();
-        Sith sith = new Sith();
+        Jedi jedi = new Jedi("Sifo Dyas", 1, 20, 25, 140);
+        Sith sith = new Sith("Count Dooku", 1, 20, 25, 140);
         Entities winner = fight(jedi, sith);
         winner.recover();
 
@@ -31,7 +31,7 @@ public class Main{
             firstPlayer.lifeCurrent -= secondPlayer.attack(op.generateRandomInt(1,5));
             if (firstPlayer.lifeCurrent <= 0) {
                 firstPlayer.knockedOut = true;
-                System.out.println(p1.name + " is knocked out");
+                System.out.println(firstPlayer.name + " is knocked out");
                 return secondPlayer;
             }
 

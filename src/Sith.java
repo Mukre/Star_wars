@@ -7,6 +7,14 @@ public class Sith extends ForceUser implements IForceAttack {
         this.lifeTotal = 75;
         this.lifeCurrent = this.lifeTotal;
     }
+    public Sith(String name, int level, int forcePoints, int saberAbility, int lifeTotal){
+        this.name = name;
+        this.level = level;
+        this.forcePoints = forcePoints;
+        this.saberAbility = saberAbility;
+        this.lifeTotal = lifeTotal;
+        this.lifeCurrent = this.lifeTotal;
+    }
 
     @Override
     public int attack(int slot) {
