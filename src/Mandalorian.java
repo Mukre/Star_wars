@@ -1,4 +1,4 @@
-public class Mandalorian extends Entities {
+public class Mandalorian extends Entity {
     public Mandalorian() {
         this.name = "Mandalorian";
         this.lifeTotal = 100;
