@@ -9,6 +9,16 @@ public abstract class Entity {
         knockedOut = false;
         this.lifeCurrent = this.lifeTotal;
     }
-
+    public void checkLifeCurrent(){
+        if(this.lifeCurrent <= 0){
+        this.knockedOut = true;
+        System.out.println(this.name + " is knocked out!");
+        }
+    }
+    public void performAttack(Entity attacker, Entity defender){
+        Operations op = new Operations();
+        defender.lifeCurrent -= attacker.attack(op.generateRandomInt(1,5));
+        defender.checkLifeCurrent();
+    }
     public abstract int attack(int slot);
 }

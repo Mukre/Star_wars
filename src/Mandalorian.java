@@ -1,7 +1,7 @@
 public class Mandalorian extends Entity {
     public Mandalorian() {
         this.name = "Mandalorian";
-        this.lifeTotal = 100;
+        this.lifeTotal = 20;
         this.lifeCurrent = this.lifeTotal;
     }
 
