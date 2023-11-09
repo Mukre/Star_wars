@@ -16,7 +16,8 @@ public class Mandalorian extends Entities {
     public int attack(int slot) {
         int damage = 0;
         if (slot == 2) {
-            System.out.println(this.name + " used thermal grenade!");
+            this.lifeCurrent -= 20;
+            System.out.println(this.name + " used thermal grenade! -20HP");
             damage = 20;
         } else {
             damage = this.attackBlaster();
